@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Board from './components/Board'
 import data from './sampleData'
+import Home from './components/pages/Home'
 
 class App extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class App extends React.Component {
     boards: []
 
   }
-
+  
   componentDidMount(){
 
     this.setState({boards : data.boards})
@@ -21,14 +22,7 @@ class App extends React.Component {
   {
     return(
       <div>
-        {this.state.boards.map(board => (
-            <div key={board.id}>
-                <span>{board.id}</span>
-                <h3>{board.title}</h3>
-                <p>{board.background}</p>
-            </div>
-
-        ))}
+          <Home boards={this.state.boards}/>
        
       </div>
 
