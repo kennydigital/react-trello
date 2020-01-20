@@ -5,7 +5,7 @@ class Board extends React.Component {
    render() {
         return (
             <div>
-            <p> boar component</p>
+            <p> board component</p>
             <List/>
             <List/>
             <List/>
