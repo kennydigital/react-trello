@@ -8,11 +8,13 @@ class List extends React.Component{
         return (
 
 
-            <div>
-            <p>list component</p>
-            <Card/>
-            <Card/>
-            <Card/>
+            <div className="list">
+                <div className="list-header">
+                     <p>{this.props.list.title}</p>
+
+                </div>
+           
+            
             </div>
 
         )
