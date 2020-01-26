@@ -3,21 +3,35 @@ import BoardPreview from '../BoardPreview'
 
 class Home extends React.Component{
 
+    newBoard = () => {
+
+        const board = {
+
+            title: "Trips to take this year",
+            background: "#80ffaa",
+            createdAt: new Date()
+
+        }
+        this.props.createNewBoard(board)
+    }
     render()
     {
         return(
           
             <div>
-            {Object.keys(this.props.boards).map(key => (
+            <button onClick={this.newBoard}>New Board</button>
+            
+            {
+                Object.keys(this.props.boards).map(key => (
 
-                <BoardPreview 
-                    key={key} 
-                    board={this.props.boards[key]}
-                />
-        
-                ))
-           
+                    <BoardPreview 
+                        key={key} 
+                        board={this.props.boards[key]}
+                    />
+            
+                    ))
             }
+            
             </div>
         )
     }
